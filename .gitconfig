@@ -1,0 +1,27 @@
+[core]
+	editor = vim
+    pager = less -R
+
+[color]
+    ui = true
+    diff = auto
+    status = auto
+    branch = auto
+
+[user]
+    name = shaung
+	email = shaun.geng@gmail.com
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    last = log -1 HEAD
+	forget = rm --cached --
+	stash-unapply = !git stash show -p | git apply -R
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ls = ls-files
+    diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
+    abandon = !"f(){ git filter-branch -f --tree-filter 'rm -f $0' HEAD;}; f"
