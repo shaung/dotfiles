@@ -24,8 +24,10 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 
 au BufRead,BufNewFile *.g  set syntax=antlr3
-au BufRead,BufNewFile *.tmpl  set syntax=mako
 au BufRead,BufNewFile *.mako  set syntax=mako
 
-" autocmd FileType python compiler pylint
+autocmd FileType python compiler pylint
+
+" :W to save as root
+command W execute ":w !sudo tee % > /dev/null"
 
