@@ -1,16 +1,37 @@
 set nocompatible
 set nobackup
-set incsearch
+set noswapfile
+set hidden
+
 set number
+set shiftwidth=4
+set shiftround
+set showmatch
+set paste
+set history=1000
+set undolevels=1000
+set wildignore=*.swp,*.bak,*.pyc
+set title
+set visualbell
+set noerrorbells
+syntax on
+filetype plugin indent on
+
+" Tab
 set tabstop=4
 set softtabstop=4
 set expandtab
-set shiftwidth=4
-set ignorecase
-set paste
-syntax on
+set smarttab
+
+" Search
+set incsearch
 set hls
-filetype plugin indent on
+set ignorecase
+set smartcase
+
+" Scheme
+set t_Co=256
+colorscheme mustang
 
 let g:ctags_statusline=1
 let generate_tags=1
