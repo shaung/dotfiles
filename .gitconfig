@@ -26,3 +26,7 @@
     ls = ls-files
     diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
     abandon = !"f(){ git filter-branch -f --tree-filter 'rm -f $0' HEAD;}; f"
+    done = !git co master && git merge develop && git co develop
+
+    # respect typos
+    psuh = push
