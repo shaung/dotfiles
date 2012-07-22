@@ -3,7 +3,7 @@ alias remove='sudo apt-get remove'
 alias search='apt-cache search'
 
 alias ll='ls -alhF'
-alais psfind='ps aux | grep'
+alias psfind='ps aux | grep'
 
 alias vi='vim'
 
