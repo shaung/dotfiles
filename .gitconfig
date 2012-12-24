@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+    editor = vim
     pager = less -R
 
 [color]
@@ -10,7 +10,7 @@
 
 [user]
     name = shaung
-	email = shaun.geng@gmail.com
+    email = shaun.geng@gmail.com
 
 [alias]
     co = checkout
@@ -18,8 +18,8 @@
     st = status
     br = branch
     last = log -1 HEAD
-	forget = rm --cached --
-	stash-unapply = !git stash show -p | git apply -R
+    forget = rm --cached --
+    stash-unapply = !git stash show -p | git apply -R
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     lolh = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
