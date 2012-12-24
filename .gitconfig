@@ -28,5 +28,9 @@
     abandon = !"f(){ git filter-branch -f --tree-filter 'rm -f $0' HEAD;}; f"
     done = !git co master && git merge develop && git co develop
 
+    # fetch and merge with upstream
+    up = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+
     # respect typos
     psuh = push
+    stat = status
