@@ -22,14 +22,17 @@
     stash-unapply = !git stash show -p | git apply -R
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    lolh = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+    ll = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
     ls = ls-files
     diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
     abandon = !"f(){ git filter-branch -f --tree-filter 'rm -f $0' HEAD;}; f"
     done = !git co master && git merge develop && git co develop
+    undo = reset --soft "HEAD^"
+    # apply the current changes to branch $1 using $2 as commit message, then merge back to the current branch
+    pon = !"if [ -z $1 ] || [ -z $2 ]; then exit; fi; CURRBR=`git symbolic-ref --short HEAD`; f(){ echo $1; echo $2; git co $1; git commit -a -m $2; git co $CURRBR; git merge $1;}; f"
 
-    # fetch and merge with upstream
-    up = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+    # fetch and merge with master
+    up = !"git fetch origin -v; git merge origin/master"
 
     # respect typos
     psuh = push
