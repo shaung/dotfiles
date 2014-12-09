@@ -49,6 +49,13 @@
     # fetch and merge with master
     up = !"git fetch origin -v; git merge origin/master"
 
+    lldos = !"find . -type f -print0 | xargs -0 file | grep CRLF"
+
     # respect typos
     psuh = push
     stat = status
+    g = grep --break --heading --line-number
+    ga = !git grep
+
+[grep]
+	lineNumber = true
