@@ -52,3 +52,10 @@ au BufRead,BufNewFile *.mako  set syntax=mako
 " :W to save as root
 command W execute ":w !sudo tee % > /dev/null"
 
+execute pathogen#infect()
+
+let g:syntastic_javascript_checker = "jshint"
+
+map <c-f> :call JsBeautify()<cr>
+
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
