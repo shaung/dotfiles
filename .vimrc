@@ -6,6 +6,7 @@ set noswapfile
 set hidden
 
 set number
+set relativenumber
 set shiftwidth=4
 set shiftround
 set showmatch
