@@ -48,7 +48,28 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+
 NeoBundle 'scrooloose/nerdtree'
+
+" nerdtree
+nnoremap TT :NERDTree<CR>
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeGlyphReadOnly = 1
+let g:NERDTreeRespectWildIgnore = 1
+let g:NERDTreeIgnore=['^__pycache__$[[dir]]', '.pyc$[[file]]', '.DS_Store$']
+
+
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+
+NeoBundle 'jistr/vim-nerdtree-tabs'
+
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+let g:nerdtree_tabs_open_on_console_startup=1
 
 NeoBundle 'tpope/vim-fugitive'
 autocmd QuickFixCmdPost *grep* cwindow
