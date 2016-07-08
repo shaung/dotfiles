@@ -43,6 +43,7 @@ let generate_tags=1
 
 au BufRead,BufNewFile *.g  set syntax=antlr3
 au BufRead,BufNewFile *.mako  set syntax=mako
+au BufRead,BufNewFile *.j2  set syntax=jinja
 
 " autocmd FileType python compiler pylint
 
