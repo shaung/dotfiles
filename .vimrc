@@ -38,6 +38,22 @@ set smartcase
 set t_Co=256
 colorscheme mustang
 
+let mapleader = ','
+let maplocalleader = ','
+
+" Stay in visual mode when indenting.
+vnoremap < <gv
+vnoremap > >gv
+
+" Copy the selected text into the clipboard.
+noremap <Leader>y "+y
+
+" Cut the selected text into the clipboard.
+noremap <Leader>d "+d
+
+" Quickly select the text I just pasted.
+noremap gV `[v`]
+
 let g:ctags_statusline=1
 let generate_tags=1
 
